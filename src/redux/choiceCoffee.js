@@ -19,6 +19,7 @@ export const choiceCoffeeSlice = createSlice({
     },
     changeCurrentType: (state, action) => {
       state.currentOrder.type = action.payload;
+      state.currentOrder.size = {};
       state.currentOrder.extras = [];
     },
     changeCurrentSize: (state, action) => {

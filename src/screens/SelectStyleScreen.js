@@ -14,7 +14,6 @@ export const SelectStyleScreen = ({navigation}) => {
   const dispatch = useDispatch();
 
   async function setType(type) {
-    console.log(type);
     dispatch(changeCurrentType(type));
     navigation.navigate('sizeScreen');
   }

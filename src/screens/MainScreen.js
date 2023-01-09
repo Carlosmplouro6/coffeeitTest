@@ -7,11 +7,10 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {setTypeSizeExtra} from '../redux/coffees';
 
 export const MainScreen = ({navigation}) => {
-  const {types} = useSelector(state => state.coffees);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -105,7 +104,6 @@ export const MainScreen = ({navigation}) => {
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('styleScreen');
-            console.log('clicked the thing');
           }}>
           <Image source={require('../images/homeImg.png')} />
         </TouchableOpacity>
