@@ -1,5 +1,12 @@
 import React, {useEffect} from 'react';
-import {Text, View, SafeAreaView, Image, TouchableOpacity} from 'react-native';
+import {
+  Text,
+  View,
+  SafeAreaView,
+  Image,
+  TouchableOpacity,
+  StyleSheet,
+} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {setTypeSizeExtra} from '../redux/coffees';
 
@@ -94,15 +101,7 @@ export const MainScreen = ({navigation}) => {
   return (
     <SafeAreaView>
       <View>
-        <Text
-          style={{
-            color: 'black',
-            fontSize: 24,
-            marginBottom: 50,
-            marginLeft: 15,
-          }}>
-          Tab the machine to start
-        </Text>
+        <Text style={style.title}>Tab the machine to start</Text>
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('styleScreen');
@@ -110,17 +109,24 @@ export const MainScreen = ({navigation}) => {
           }}>
           <Image source={require('../images/homeImg.png')} />
         </TouchableOpacity>
-        <Text
-          style={{
-            fontSize: 16,
-            color: 'black',
-            marginTop: 50,
-            marginLeft: 30,
-            textDecorationLine: 'underline',
-          }}>
-          How does this work
-        </Text>
+        <Text style={style.underlink}>How does this work</Text>
       </View>
     </SafeAreaView>
   );
 };
+
+const style = StyleSheet.create({
+  title: {
+    color: 'black',
+    fontSize: 24,
+    marginBottom: 50,
+    marginLeft: 15,
+  },
+  underlink: {
+    fontSize: 16,
+    color: 'black',
+    marginTop: 50,
+    marginLeft: 30,
+    textDecorationLine: 'underline',
+  },
+});

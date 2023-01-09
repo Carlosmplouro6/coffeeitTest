@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, View, TouchableOpacity, Image} from 'react-native';
+import {Text, View, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import {useSelector} from 'react-redux';
 
 export const OptionsTab = props => {
@@ -13,34 +13,15 @@ export const OptionsTab = props => {
       onPress={() => {
         setOpen(!open);
       }}>
-      <View
-        style={{
-          backgroundColor: '#AED7A0',
-          margin: 15,
-          marginTop: 0,
-          borderRadius: 4,
-          alignItems: 'center',
-        }}>
-        <View
-          style={{
-            height: 90,
-            width: '100%',
-            justifyContent: 'center',
-          }}>
-          <Text style={{marginLeft: 20, color: 'white', fontWeight: '600'}}>
+      <View style={style.choiceContainer}>
+        <View style={style.container}>
+          <Text style={style.choiceContainerText}>
             {extra.name.split(' ').pop().charAt(0).toUpperCase() +
               extra.name.split(' ').pop().slice(1)}
           </Text>
         </View>
         {open ? (
-          <View
-            style={{
-              width: '80%',
-              alignItems: 'center',
-              borderTopColor: 'white',
-              borderTopWidth: 2,
-              paddingVertical: 15,
-            }}>
+          <View style={style.separationLine}>
             {extra.subselections.map(sub => {
               return (
                 <TouchableOpacity
@@ -54,34 +35,17 @@ export const OptionsTab = props => {
                       },
                     });
                   }}
-                  style={{
-                    backgroundColor: '#9BC88B',
-                    height: 55,
-                    width: '100%',
-                    margin: 15,
-                    marginTop: 0,
-                    borderRadius: 4,
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                  }}
+                  style={style.insideButton}
                   key={sub._id}>
-                  <Text
-                    style={{
-                      marginLeft: 5,
-                      color: 'white',
-                      fontWeight: '600',
-                    }}>
-                    {sub.name}
-                  </Text>
+                  <Text style={style.insideButtonText}>{sub.name}</Text>
                   {sub._id === currentSelection?.subselections._id ? (
                     <Image
-                      style={{marginRight: 5}}
+                      style={style.insideButtonImg}
                       source={require('../images/checked.png')}
                     />
                   ) : (
                     <Image
-                      style={{marginRight: 5}}
+                      style={style.insideButtonImg}
                       source={require('../images/notChecked.png')}
                     />
                   )}
@@ -94,3 +58,45 @@ export const OptionsTab = props => {
     </TouchableOpacity>
   );
 };
+
+const style = StyleSheet.create({
+  container: {
+    height: 90,
+    width: '100%',
+    justifyContent: 'center',
+  },
+  title: {
+    color: 'black',
+    fontSize: 24,
+    marginBottom: 20,
+    marginLeft: 15,
+  },
+  choiceContainer: {
+    backgroundColor: '#AED7A0',
+    margin: 15,
+    marginTop: 0,
+    borderRadius: 4,
+    alignItems: 'center',
+  },
+  choiceContainerText: {marginLeft: 20, color: 'white', fontWeight: '600'},
+  separationLine: {
+    width: '80%',
+    alignItems: 'center',
+    borderTopColor: 'white',
+    borderTopWidth: 2,
+    paddingVertical: 15,
+  },
+  insideButton: {
+    backgroundColor: '#9BC88B',
+    height: 55,
+    width: '100%',
+    margin: 15,
+    marginTop: 0,
+    borderRadius: 4,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  insideButtonText: {marginLeft: 5, color: 'white', fontWeight: '600'},
+  insideButtonImg: {marginRight: 5},
+});
