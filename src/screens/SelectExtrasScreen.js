@@ -10,6 +10,7 @@ import {
 import {useDispatch, useSelector} from 'react-redux';
 import {changeCurrentExtra} from '../redux/choiceCoffee';
 import {OptionsTab} from '../components/OptionsTab';
+import {Colors} from '../common/styling';
 
 export const SelectExtrasScreen = ({navigation}) => {
   const {extras} = useSelector(state => state.coffees);
@@ -48,17 +49,17 @@ const style = StyleSheet.create({
     height: '100%',
   },
   title: {
-    color: 'black',
+    color: Colors.black,
     fontSize: 24,
     marginBottom: 20,
     marginLeft: 15,
   },
   choiceContainer: {
-    backgroundColor: '#AED7A0',
+    backgroundColor: Colors.lightGreen,
     height: 90,
     margin: 15,
     borderRadius: 4,
     justifyContent: 'center',
   },
-  choiceContainerText: {marginLeft: 20, color: 'white', fontWeight: '600'},
+  choiceContainerText: {marginLeft: 20, color: Colors.white, fontWeight: '600'},
 });

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Text, View, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import {useSelector} from 'react-redux';
+import {Colors} from '../common/styling';
 
 export const OptionsTab = props => {
   const [open, setOpen] = useState(false);
@@ -66,28 +67,28 @@ const style = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    color: 'black',
+    color: Colors.black,
     fontSize: 24,
     marginBottom: 20,
     marginLeft: 15,
   },
   choiceContainer: {
-    backgroundColor: '#AED7A0',
+    backgroundColor: Colors.lightGreen,
     margin: 15,
     marginTop: 0,
     borderRadius: 4,
     alignItems: 'center',
   },
-  choiceContainerText: {marginLeft: 20, color: 'white', fontWeight: '600'},
+  choiceContainerText: {marginLeft: 20, color: Colors.white, fontWeight: '600'},
   separationLine: {
     width: '80%',
     alignItems: 'center',
-    borderTopColor: 'white',
+    borderTopColor: Colors.white,
     borderTopWidth: 2,
     paddingVertical: 15,
   },
   insideButton: {
-    backgroundColor: '#9BC88B',
+    backgroundColor: Colors.mediumGreen,
     height: 55,
     width: '100%',
     margin: 15,
@@ -97,6 +98,6 @@ const style = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  insideButtonText: {marginLeft: 5, color: 'white', fontWeight: '600'},
+  insideButtonText: {marginLeft: 5, color: Colors.white, fontWeight: '600'},
   insideButtonImg: {marginRight: 5},
 });

@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {changeCurrentSize} from '../redux/choiceCoffee';
+import {Colors} from '../common/styling';
 
 export const SelectSizeScreen = ({navigation}) => {
   const {sizes} = useSelector(state => state.coffees);
@@ -41,18 +42,18 @@ export const SelectSizeScreen = ({navigation}) => {
 
 const style = StyleSheet.create({
   title: {
-    color: 'black',
+    color: Colors.black,
     fontSize: 24,
     marginBottom: 20,
     marginLeft: 15,
   },
   choiceContainer: {
-    backgroundColor: '#AED7A0',
+    backgroundColor: Colors.lightGreen,
     height: 90,
     margin: 15,
     marginTop: 0,
     borderRadius: 4,
     justifyContent: 'center',
   },
-  choiceContainerText: {marginLeft: 20, color: 'white', fontWeight: '600'},
+  choiceContainerText: {marginLeft: 20, color: Colors.white, fontWeight: '600'},
 });

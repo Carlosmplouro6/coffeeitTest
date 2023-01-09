@@ -8,6 +8,7 @@ import {SelectSizeScreen} from './src/screens/SelectSizeScreen';
 import {SelectExtrasScreen} from './src/screens/SelectExtrasScreen';
 import {OverviewScreen} from './src/screens/OverviewScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {Colors} from './src/common/styling';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,7 +19,7 @@ const App = () => {
         <Stack.Navigator
           screenOptions={{
             contentStyle: {
-              backgroundColor: '#FFFFFF',
+              backgroundColor: Colors.white,
             },
             headerShadowVisible: false,
             headerTitleStyle: {

@@ -9,6 +9,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import {useSelector} from 'react-redux';
+import {Colors} from '../common/styling';
 
 export const OverviewScreen = ({navigation}) => {
   const choiceCoffee = useSelector(state => state.choiceCoffee.currentOrder);
@@ -81,13 +82,13 @@ const style = StyleSheet.create({
     height: '100%',
   },
   title: {
-    color: 'black',
+    color: Colors.black,
     fontSize: 24,
     marginBottom: 20,
     marginLeft: 15,
   },
   overviewContainer: {
-    backgroundColor: '#AED7A0',
+    backgroundColor: Colors.lightGreen,
     borderRadius: 4,
     margin: 15,
   },
@@ -97,16 +98,16 @@ const style = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
   },
-  choiceContainerText: {marginLeft: 20, color: 'white', fontWeight: '600'},
+  choiceContainerText: {marginLeft: 20, color: Colors.white, fontWeight: '600'},
   choiceContainerEdit: {
     marginRight: 20,
-    color: 'white',
+    color: Colors.white,
     fontWeight: '600',
     fontSize: 12,
   },
   dividerLine: {
     width: '90%',
-    backgroundColor: 'white',
+    backgroundColor: Colors.white,
     height: 2,
     alignSelf: 'center',
   },
@@ -119,19 +120,19 @@ const style = StyleSheet.create({
   },
   extrasInsiderButtonText: {
     marginLeft: 20,
-    color: 'white',
+    color: Colors.white,
     fontWeight: '600',
   },
   extrasInsiderDivider: {
     width: '90%',
     alignItems: 'center',
-    borderTopColor: 'white',
+    borderTopColor: Colors.white,
     borderTopWidth: 2,
     paddingVertical: 15,
     alignSelf: 'center',
   },
   extrasInsiderSubButton: {
-    backgroundColor: '#9BC88B',
+    backgroundColor: Colors.mediumGreen,
     height: 55,
     width: '100%',
     margin: 15,
@@ -143,16 +144,16 @@ const style = StyleSheet.create({
   },
   extrasInsiderSubButtonText: {
     marginLeft: 5,
-    color: 'white',
+    color: Colors.white,
     fontWeight: '600',
   },
   selectIcon: {marginRight: 5},
   bottomButton: {
-    backgroundColor: '#AED7A0',
+    backgroundColor: Colors.lightGreen,
     height: 90,
     margin: 15,
     borderRadius: 4,
     justifyContent: 'center',
   },
-  bottomButtonText: {marginLeft: 20, color: 'white', fontWeight: '700'},
+  bottomButtonText: {marginLeft: 20, color: Colors.white, fontWeight: '700'},
 });

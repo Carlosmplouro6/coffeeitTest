@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import {useDispatch} from 'react-redux';
 import {setTypeSizeExtra} from '../redux/coffees';
+import {Colors} from '../common/styling';
 
 export const MainScreen = ({navigation}) => {
   const dispatch = useDispatch();
@@ -115,14 +116,14 @@ export const MainScreen = ({navigation}) => {
 
 const style = StyleSheet.create({
   title: {
-    color: 'black',
+    color: Colors.black,
     fontSize: 24,
     marginBottom: 50,
     marginLeft: 15,
   },
   underlink: {
     fontSize: 16,
-    color: 'black',
+    color: Colors.black,
     marginTop: 50,
     marginLeft: 30,
     textDecorationLine: 'underline',
